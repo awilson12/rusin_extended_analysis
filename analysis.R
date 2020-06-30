@@ -15,8 +15,13 @@ ggplot(rusin)+geom_histogram(aes(x=TE,y=..density..,fill=Organism),color="black"
   theme_pubr()+
   facet_wrap(~Organism)
 
-ggplot(rusin)+geom_violin(aes(x=Organism,y=TE,fill=Organism),draw_quantiles = c(0.25,0.5,0.75))+
-  theme_pubr()
+windows()
+ggplot(rusin)+geom_violin(aes(x=Organism,y=TE,fill=Organism),draw_quantiles = c(0.25,0.5,0.75),alpha=0.7)+
+  scale_fill_discrete(name="",labels=c(expression(italic('M. luteus')),"PRD-1",expression(italic('S. rubidea'))))+
+  scale_x_discrete(name="",labels=c(expression(italic('M. luteus')),"PRD-1",expression(italic('S. rubidea'))))+
+  scale_y_continuous(name="Transfer Efficiency (%)")+
+  theme_pubr()+
+  theme(legend.position = "none")
 
 #relationship between TE and inoculation concentration?
 ggplot(rusin)+geom_point(aes(x=rusin$X5ul.Innoculum.log10,y=rusin$TE.))
