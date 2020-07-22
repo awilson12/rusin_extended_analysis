@@ -22,4 +22,3 @@ sd(rusin$TE[rusin$Organism=="PRD-1"])
 
 #sd of S. rubidea
 sd(rusin$TE[rusin$Organism=="S. Rubidea"])
-
